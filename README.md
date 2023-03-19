@@ -11,7 +11,7 @@ CI/CD Pipelines – Github Actions
 
 Deployment – AWS
 
-## Agenda (whenever working on ML project w/ team)
+## Part 1 Agenda (whenever working on ML project w/ team)
 Before everything else:	Set up the Repository (Github) – deciding/establishing formal project structure
 a)	Make New environment
 b)	Setup.py
@@ -33,3 +33,9 @@ After these commands or before all create .gitignore directly on GitHub with tem
 * Step 4. Create setup.py and requirement.txt files in root working project folder
 Setup.py – would be responsible for setting up our project/ml application as package so it can be installed and used in another project. This file is called the Setup Script, the main purpose is to describe our module to the Distutils, so the various commands that operates on our module do the right thing. 
 Create ./src folder and inside of it __init__.py file, so setup() from setuptools can find it upon execution and treat it as a package it needs to build.
+* Step 5. Make function to read requirements.txt so it can read all packages listed in that file, so it can be dynamically provided to setup function in setup.py. 
+i.e. populate requirements.txt with some libraries we gonna use to demonstrate workflow like:
+pandas numpy seaborn and always last needs to be “-e .” its required for requirements.txt in order to trigger setup.py
+--Execute command: pip install –r requirements.txt
+It will install required packages and intiallize project through setup.py
+
